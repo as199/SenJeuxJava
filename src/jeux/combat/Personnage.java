@@ -11,7 +11,7 @@ package jeux.combat;
  */
 public abstract class Personnage {
     
-    private String nom1;
+    private String prenom;
     @SuppressWarnings("FieldMayBeFinal")
     private String nom;
     @SuppressWarnings("FieldMayBeFinal")
@@ -27,9 +27,9 @@ public abstract class Personnage {
     @SuppressWarnings("FieldMayBeFinal")
     private int intelligence;
 
-    public Personnage(String nom1, String nom, int typePersonnage, int niveau,int force, int agilite, int intelligence) {
+    public Personnage(String prenom, String nom, int typePersonnage, int niveau,int force, int agilite, int intelligence) {
 
-        this.nom1 = nom1;
+        this.prenom = prenom;
         this.nom = nom;
         this.typePersonnage = typePersonnage;
         this.niveau = niveau;
@@ -81,11 +81,11 @@ public abstract class Personnage {
     }
 
 
-    public String getNom1() {
-        return nom1;
+    public String getprenom() {
+        return prenom;
     }
 
-    public void setNom1(String nom1) {
-        this.nom1 = nom1;
+    public void setprenom(String prenom) {
+        this.prenom = prenom;
     }
 }

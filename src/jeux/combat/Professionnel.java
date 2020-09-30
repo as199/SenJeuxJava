@@ -13,9 +13,9 @@ public class Professionnel extends Personnage {
      private String coupBasique = "coup de point";
     private String couSpecial = "Concentration";
 
-    public Professionnel(String nom1, String nom, int typePersonnage, int niveau, int force, int agilite, int intelligence) {
+    public Professionnel(String prenom, String nom, int typePersonnage, int niveau, int force, int agilite, int intelligence) {
 
-        super(nom1, nom, typePersonnage, niveau, force, agilite, intelligence);
+        super(prenom, nom, typePersonnage, niveau, force, agilite, intelligence);
     }
 
      @Override

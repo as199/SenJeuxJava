@@ -15,9 +15,9 @@ public class Boxer extends Personnage {
     private String couSpecial = "Coup de pied";
     private int viePerdu = 0;
 
-    public Boxer(String nom1, String nom, int typePersonnage, int niveau, int force, int agilite, int intelligence) {
+    public Boxer(String prenom, String nom, int typePersonnage, int niveau, int force, int agilite, int intelligence) {
 
-        super(nom1, nom, typePersonnage, niveau, force, agilite, intelligence);
+        super(prenom, nom, typePersonnage, niveau, force, agilite, intelligence);
     }
 
      @Override

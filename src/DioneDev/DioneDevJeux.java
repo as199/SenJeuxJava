@@ -21,6 +21,9 @@ public class DioneDevJeux {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        int rejouer = 0;
+        do{
+            
         // TODO code application logic here
      boolean finDuJeu = true;
         Scanner sc = new Scanner(System.in);
@@ -121,7 +124,7 @@ public class DioneDevJeux {
 
             if(compteurJoueur == 1) {
 
-                System.out.println(joueur1.getNom1() + "Joueur 1 vie (" + joueur1.getVie() + " Vitalité) veuillez choisir votre action (1 : Attaque Basique, 2 : Attaque Spéciale)");
+                System.out.println(joueur1.getprenom() + "Joueur 1 vie (" + joueur1.getVie() + " Vitalité) veuillez choisir votre action (1 : Attaque Basique, 2 : Attaque Spéciale)");
                // type de l'attaque
                 attaque = sc.nextInt();
 
@@ -136,7 +139,7 @@ public class DioneDevJeux {
 
             } else {
 
-                System.out.println(joueur2.getNom1() + "Joueur 2 vie (" + joueur2.getVie() + " Vitalité) veuillez choisir votre action (1 : Attaque Basique, 2 : Attaque Spéciale)");
+                System.out.println(joueur2.getprenom() + "Joueur 2 vie (" + joueur2.getVie() + " Vitalité) veuillez choisir votre action (1 : Attaque Basique, 2 : Attaque Spéciale)");
                 attaque = sc.nextInt();
 
                 if(testAttaque(attaque)) {
@@ -161,7 +164,11 @@ public class DioneDevJeux {
         } else {
             System.out.println("Joueur 2 a perdu !");
         }
-
+        System.out.println("Taper 1 pour rejouer");
+         rejouer = sc.nextInt();
+        
+    }
+        while(rejouer ==1);
     }
     /**
      * permet de tester si le joueur entre les bonnes valeurs pour attaquer (1 ou 2)
@@ -228,9 +235,9 @@ public class DioneDevJeux {
     public static void attaque(Personnage joueur1, Personnage joueur2 , int attaque) {
 
         if (attaque == 1) {
-            System.out.println(joueur1.getNom1() + ", " + joueur1.getNom() + " utilise " + joueur1.getCoupBasique() + " et inflige " + joueur1.attackBasique() + " dommages.");
+            System.out.println(joueur1.getprenom() + ", " + joueur1.getNom() + " utilise " + joueur1.getCoupBasique() + " et inflige " + joueur1.attackBasique() + " dommages.");
             joueur2.setVie(joueur2.getVie() - joueur1.attackBasique());
-            System.out.println(joueur2.getNom1() + ", " + joueur2.getNom() + " perd " + joueur1.attackBasique() + " points de vie");
+            System.out.println(joueur2.getprenom() + ", " + joueur2.getNom() + " perd " + joueur1.attackBasique() + " points de vie");
             joueurMort(joueur2);
 
         } else {
@@ -240,19 +247,19 @@ public class DioneDevJeux {
 
                 case 1:
                     int pointAttackSpecial = joueur1.attackSpecial();
-                    System.out.println(joueur1.getNom1() + ", " + joueur1.getNom() + " utilise " + joueur1.getCouSpecial() + " et inflige " + pointAttackSpecial + " dommages.");
+                    System.out.println(joueur1.getprenom() + ", " + joueur1.getNom() + " utilise " + joueur1.getCouSpecial() + " et inflige " + pointAttackSpecial + " dommages.");
                     joueur2.setVie(joueur2.getVie() - pointAttackSpecial);
-                    System.out.println(joueur2.getNom1() + ", " + joueur2.getNom() + " perd " + pointAttackSpecial + " points de vie");
+                    System.out.println(joueur2.getprenom() + ", " + joueur2.getNom() + " perd " + pointAttackSpecial + " points de vie");
                     joueurMort(joueur2);
-                    System.out.println(joueur1.getNom1() + ", " + joueur1.getNom() + " perd " + ((Boxer) joueur1).getViePerdu() + " points de vie");
+                    System.out.println(joueur1.getprenom() + ", " + joueur1.getNom() + " perd " + ((Boxer) joueur1).getViePerdu() + " points de vie");
                     break;
 
                 case 2:
-                    System.out.println(joueur1.getNom1() + ", " + joueur1.getNom() + " utilise " + joueur1.getCouSpecial() + " et gagne " + joueur1.attackSpecial() + " d'agilité.");
+                    System.out.println(joueur1.getprenom() + ", " + joueur1.getNom() + " utilise " + joueur1.getCouSpecial() + " et gagne " + joueur1.attackSpecial() + " d'agilité.");
                     break;
 
                 case 3:
-                    System.out.println(joueur1.getNom1() + ", " + joueur1.getNom() + " utilise " + joueur1.getCouSpecial() + " et gagne " + joueur1.attackSpecial() + " en vitalité.");
+                    System.out.println(joueur1.getprenom() + ", " + joueur1.getNom() + " utilise " + joueur1.getCouSpecial() + " et gagne " + joueur1.attackSpecial() + " en vitalité.");
                     break;
 
             }

@@ -10,13 +10,13 @@ package jeux.combat;
  * @author Assane Dione
  */
 public class Amateur extends Personnage {
-     private String coupBasique = "coup de tête";
-    private String couSpecial = "double coups de points";
+     private  String coupBasique = "coup de tête";
+    private final String couSpecial = "double coups de points";
     private int vieDepart = 0;
 
-    public Amateur(String nom1, String nom, int typePersonnage, int niveau, int force, int agilite, int intelligence) {
+    public Amateur(String prenom, String nom, int typePersonnage, int niveau, int force, int agilite, int intelligence) {
 
-        super(nom1, nom, typePersonnage, niveau, force, agilite, intelligence);
+        super(prenom, nom, typePersonnage, niveau, force, agilite, intelligence);
         vieDepart = getVie();
     }
 
